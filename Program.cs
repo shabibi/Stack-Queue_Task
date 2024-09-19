@@ -118,44 +118,71 @@
 
             //***************************************************
             //Bonus : Sort a Stack Using Another Stack
-            Console.WriteLine("********************************\nBonus");
-            Console.WriteLine("How many numbers you whant to push");
-            int countNum = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Your Numbers: ");
-            Stack<int>  stackSort = new Stack<int>();
-            Stack<int> temp = new Stack<int>();
-            int max = 0;
-            for(int i = 0;i < countNum; i++)
-            {
-              stackSort.Push(int.Parse(Console.ReadLine()));
-            }
-            Console.WriteLine("The elements in ascending order ");
+            //Console.WriteLine("********************************\nBonus");
+            //Console.WriteLine("How many numbers you whant to push");
+            //int countNum = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter Your Numbers: ");
+            //Stack<int>  stackSort = new Stack<int>();
+            //Stack<int> temp = new Stack<int>();
+            //int max = 0;
+            //for(int i = 0;i < countNum; i++)
+            //{
+            //  stackSort.Push(int.Parse(Console.ReadLine()));
+            //}
+            //Console.WriteLine("The elements in ascending order ");
             
-            do
-            {
-                temp.Clear();
-                max = stackSort.Max();
-                while (stackSort.Count > 0)
-                {
+            //do
+            //{
+            //    temp.Clear();
+            //    max = stackSort.Max();
+            //    while (stackSort.Count > 0)
+            //    {
                     
-                    if (max == stackSort.Peek())
-                    {
-                        Console.WriteLine(max);
-                        stackSort.Pop();
-                    }
-                    else
-                    {
-                        temp.Push(stackSort.Pop());
-                    }
-                }
-                foreach(int n in temp)
-                {
-                    stackSort.Push(n);
-                }
+            //        if (max == stackSort.Peek())
+            //        {
+            //            Console.WriteLine(max);
+            //            stackSort.Pop();
+            //        }
+            //        else
+            //        {
+            //            temp.Push(stackSort.Pop());
+            //        }
+            //    }
+            //    foreach(int n in temp)
+            //    {
+            //        stackSort.Push(n);
+            //    }
                
                 
-            } while (temp.Count > 1);
-            Console.WriteLine(stackSort.Peek());
+            //} while (temp.Count > 1);
+            //Console.WriteLine(stackSort.Peek());
+
+            //***************************************************
+            //Queue
+            //Task 1: Reverse a Queue
+            Console.WriteLine("********************************\nQueue\nTask1");
+            Console.WriteLine("Queue: 1, 2, 3, 4, 5");
+            int[] numbers = { 1,2,3,4,5};
+            Queue<int> queue = new Queue<int>();
+            Stack<int> stack = new Stack<int>();
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                stack.Push(numbers[i]);
+            }
+            foreach (int i in stack)
+            {
+                queue.Enqueue(i);
+            }
+            
+            Console.WriteLine();
+            Console.Write("Reversed Queue: ");
+            while(queue.Count>0)
+            {
+                Console.Write(queue.Dequeue() + " ");
+            }
+          
+
+
         }
         
     }
