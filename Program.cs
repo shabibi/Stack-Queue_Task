@@ -183,40 +183,67 @@
 
             //***************************************************
             //Task 2: Check if a Queue is a Palindrome
-            Console.WriteLine("********************************\nTask2:Check if a Queue is a Palindrome");
-            Queue<char> Qpalindrome = new Queue<char>();
-            Stack<char> SPalindrome = new Stack<char>();
+            //Console.WriteLine("********************************\nTask2:Check if a Queue is a Palindrome");
+            //Queue<char> Qpalindrome = new Queue<char>();
+            //Stack<char> SPalindrome = new Stack<char>();
 
-            Console.WriteLine("Enter number ");
+            //Console.WriteLine("Enter number ");
 
-            string num = Console.ReadLine();
-            bool flag = false;
-            for (int i = 0; i < num.Length; i++)
+            //string num = Console.ReadLine();
+            //bool flag = false;
+            //for (int i = 0; i < num.Length; i++)
+            //{
+            //    Qpalindrome.Enqueue(num[i]);
+            //    SPalindrome.Push(num[i]);
+            //}
+            //while (Qpalindrome.Count > 0)
+            //{
+            //    if (Qpalindrome.Dequeue() == SPalindrome.Pop())
+            //        flag = true;
+            //    else
+            //    {
+            //        flag = false;
+            //        break;
+            //    }
+            //}
+            //if (flag == true)
+            //{
+            //    Console.WriteLine("Palindrome");
+
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not Palindrome");
+            //}
+
+            //***************************************************
+            //Bonus: Find the Maximum Element in a Sliding Window of Size K 
+            Console.WriteLine("********************************" +
+                "\nBonus: Find the Maximum Element in a Sliding Window of Size K ");
+            Console.WriteLine("Enter number of elements");
+            int len = int.Parse(Console.ReadLine());
+            Queue<int> number = new Queue<int>();
+            Queue<int> Sliding = new Queue<int>();
+            int max = 0;
+            Console.WriteLine("Enter "+len+" elements");
+            for (int i = 0; i < len; i++)
             {
-                Qpalindrome.Enqueue(num[i]);
-                SPalindrome.Push(num[i]);
+                number.Enqueue(int.Parse(Console.ReadLine()));
             }
-            while (Qpalindrome.Count > 0)
+            Console.WriteLine("Enter Sliding Window of Size  ");
+            int k = int.Parse(Console.ReadLine());
+            while(number.Count>0)
             {
-                if (Qpalindrome.Dequeue() == SPalindrome.Pop())
-                    flag = true;
-                else
+                while (Sliding.Count < k)
                 {
-                    flag = false;
-                    break;
+                    Sliding.Enqueue(number.Dequeue());
                 }
+                max = Sliding.Max();
+                Console.Write(max.ToString() +' ');
+                Sliding.Dequeue();
+                
             }
-            if (flag == true)
-            {
-                Console.WriteLine("Palindrome");
-
-            }
-            else
-            {
-                Console.WriteLine("Not Palindrome");
-            }
-
-
+            
         }
 
     }
