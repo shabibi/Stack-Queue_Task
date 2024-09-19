@@ -96,6 +96,27 @@
                 Console.WriteLine("Balanced Parenthesis ");
             else
                 Console.WriteLine("Not Balanced Parenthesis");
+            //***************************************************
+            //Task4:
+            Console.WriteLine("********************************\nTask 4");
+            Console.WriteLine("How many numbers you whant to push");
+            int count = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Your Numbers: ");
+            Stack<int> stackMaxNUM = new Stack<int>();
+            int MAXNum = 0;
+            for (int i = 0; i < count; i++)
+            {
+                stackMaxNUM.Push(int.Parse(Console.ReadLine()));
+                if(MAXNum > stackMaxNUM.Peek())
+                {
+                    stackMaxNUM.Pop();
+                }  
+                else
+                    MAXNum = stackMaxNUM.Peek();
+            }
+            Console.WriteLine("Maximum Element in a Stack is "+ stackMaxNUM.Peek());
+
+            }
         }
+
     }
-}
