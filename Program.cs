@@ -160,31 +160,65 @@
             //***************************************************
             //Queue
             //Task 1: Reverse a Queue
-            Console.WriteLine("********************************\nQueue\nTask1");
-            Console.WriteLine("Queue: 1, 2, 3, 4, 5");
-            int[] numbers = { 1,2,3,4,5};
-            Queue<int> queue = new Queue<int>();
-            Stack<int> stack = new Stack<int>();
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                stack.Push(numbers[i]);
-            }
-            foreach (int i in stack)
-            {
-                queue.Enqueue(i);
-            }
+            //Console.WriteLine("********************************\nQueue\nTask1");
+            //Console.WriteLine("Queue: 1, 2, 3, 4, 5");
+            //int[] numbers = { 1,2,3,4,5};
+            //Queue<int> queue = new Queue<int>();
+            //Stack<int> stack = new Stack<int>();
+            //for (int i = 0; i < numbers.Length; i++)
+            //{
+            //    stack.Push(numbers[i]);
+            //}
+            //foreach (int i in stack)
+            //{
+            //    queue.Enqueue(i);
+            //}
             
-            Console.WriteLine();
-            Console.Write("Reversed Queue: ");
-            while(queue.Count>0)
+            //Console.WriteLine();
+            //Console.Write("Reversed Queue: ");
+            //while(queue.Count>0)
+            //{
+            //    Console.Write(queue.Dequeue() + " ");
+            //}
+
+            //***************************************************
+            //Task 2: Check if a Queue is a Palindrome
+            Console.WriteLine("********************************\nTask2:Check if a Queue is a Palindrome");
+            Queue<char> Qpalindrome = new Queue<char>();
+            Stack<char> SPalindrome = new Stack<char>();
+
+            Console.WriteLine("Enter number ");
+
+            string num = Console.ReadLine();
+            bool flag = false;
+            for (int i = 0; i < num.Length; i++)
             {
-                Console.Write(queue.Dequeue() + " ");
+                Qpalindrome.Enqueue(num[i]);
+                SPalindrome.Push(num[i]);
             }
-          
+            while (Qpalindrome.Count > 0)
+            {
+                if (Qpalindrome.Dequeue() == SPalindrome.Pop())
+                    flag = true;
+                else
+                {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag == true)
+            {
+                Console.WriteLine("Palindrome");
+
+            }
+            else
+            {
+                Console.WriteLine("Not Palindrome");
+            }
 
 
         }
-        
+
     }
 
     }
