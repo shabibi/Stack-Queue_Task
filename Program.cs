@@ -11,9 +11,9 @@
             //Task1
             Stack<int>  numbers = new Stack<int>();
             string operation = "512+4*+3-";
-            operation.Trim().Split();
+            
             int n = 0, total = 0;
-            char firstChar;
+            
 
             for (int i = 0; i < operation.Length; i++)
             {
@@ -53,18 +53,24 @@
                     numbers.Push(int.Parse(operation[i].ToString()));
                 }
             }
-            Console.WriteLine("Total is " + total);
+            Console.WriteLine(" Evaluate Postfix Expression(5 1 2 + 4 * + 3 - ):Total is " + total);
 
-          
+          //**************************************************************
+          //Task2:
 
-
-
-
-
-        }
-
+            Stack<char> stack1 = new Stack<char>();
+            Console.WriteLine("Enter your input");
+            string input = Console.ReadLine(); 
+            Console.WriteLine("Input reverse is: ");
+            foreach(char s in input ) 
+            {
+                stack1.Push(s); 
+            }
+            while(stack1.Count >0)
+            {
+                Console.Write(stack1.Pop());
             }
 
-
-
         }
+    }
+}
